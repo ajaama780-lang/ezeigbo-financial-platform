@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
@@ -222,10 +222,11 @@ export default function MyPackages() {
                     <div className="pt-4 border-t border-purple-500/20 text-xs text-gray-500 grid grid-cols-2 gap-2">
                       <p>Purchased: {new Date(pkg.purchase_date).toLocaleDateString()}</p>
                       <p>Expires: {new Date(pkg.expiry_date).toLocaleDateString()}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         )}
       </div>
